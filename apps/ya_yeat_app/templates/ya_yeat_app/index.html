@@ -1,36 +1,77 @@
 {% extends 'ya_yeat_app/base.html' %} {% load static %} {% block index%}
-<div class="animsition">
-  <div class="row">
-    <div class="col col--center m-5 ">
-      <div id="locator" class=" card shadow-lg p-3 mb-5 bg-white rounded w-50">
-        <div class="card-header bg-danger">
-          <h1 class="text-white text-center futura">
-            Can't Decide Where to Eat?
-          </h1>
-        </div>
-        <div class="card-body">
-          <!-- Error displayer     -->
-          {% if messages %} {% for message in messages %}
-          {{ message }}
-          {% endfor %} {% endif %}
-          <form id="index" action="/rng" method="POST">
-            {% csrf_token %}
-            <div class="form-group">
-              <input
-                class="form-control"
-                onfocus="this.value=''"
-                name="location"
-                value="Where to?"
-              />
-            </div>
-            <button id="result" class="btn btn-dark btn-lg btn-block futura ">
-              Ya Yeat
-            </button>
-          </form>
+<div class="col lg-12 sm-0 md-0">
+  <div class="animsition">
+    <div class="row">
+      <div class="col col--center m-5 ">
+        <div
+          id="locator"
+          class=" card shadow-lg p-3 mb-5 bg-white rounded w-50"
+        >
+          <div class="card-header bg-danger">
+            <h1 class="text-white text-center futura">
+              Can't Decide Where to Eat?
+            </h1>
+          </div>
+          <div class="card-body">
+            <!-- Error displayer     -->
+            {% if messages %} {% for message in messages %}
+            {{ message }}
+            {% endfor %} {% endif %}
+            <form id="index" action="/rng" method="POST">
+              {% csrf_token %}
+              <div class="form-group">
+                <input
+                  class="form-control"
+                  onfocus="this.value=''"
+                  name="location"
+                  value="Where at?"
+                />
+              </div>
+              <button id="result" class="btn btn-dark btn-lg btn-block futura ">
+                Ya Yeat
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
   </div>
+</div>
+
+<div class="col sm-12 md-0 lg-0">
+    <div class="animsition">
+        <div class="row">
+          <div class="col col--center m-5 ">
+            <div id="locator" class=" card shadow-lg p-3 mb-5 bg-white rounded">
+              <div class="card-header bg-danger">
+                <h1 class="text-white text-center futura" style="font-size: 20px;">
+                  Can't Decide Where to Eat?
+                </h1>
+              </div>
+              <div class="card-body">
+                <!-- Error displayer     -->
+                {% if messages %} {% for message in messages %}
+                {{ message }}
+                {% endfor %} {% endif %}
+                <form id="index" action="/rng" method="POST">
+                  {% csrf_token %}
+                  <div class="form-group">
+                    <input
+                      class="form-control"
+                      onfocus="this.value=''"
+                      name="location"
+                      value="Where at?"
+                    />
+                  </div>
+                  <button id="result" class="btn btn-dark btn-lg btn-block futura " style="font-size:15px;">
+                    Ya Yeat
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 </div>
 
 {%endblock %}

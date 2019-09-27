@@ -1,10 +1,13 @@
 {% extends 'ya_yeat_app/base.html' %} {% load static %} {% block random_result%}
 
-  <div     class="animsition"
-  data-animsition-in-class="fade-in-left-lg"
-  data-animsition-in-duration="1500"
-  data-animsition-out-class="fade-out-left-lg"
-  data-animsition-out-duration="1500">
+<div class="col lg-12 sm-0 md-0">
+  <div
+    class="animsition"
+    data-animsition-in-class="fade-in-left-lg"
+    data-animsition-in-duration="1500"
+    data-animsition-out-class="fade-out-left-lg"
+    data-animsition-out-duration="1500"
+  >
     <div class="row">
       <div class="col col--center m-5">
         <div id="locator" class=" card shadow-lg p-3 mb-5 bg-white rounded ">
@@ -111,12 +114,175 @@
           </div>
           <div class="card-footer ">
             <a class="btn btn-dark btn-lg futura " href="/reset">Nah Fam</a>
-            <a class="btn btn-dark btn-lg futura animsition-link" data-animsition-out-class="fade-out-left"
-            data-animsition-out-duration="1500" href="/">Go Back</a>
+            <a
+              class="btn btn-dark btn-lg futura animsition-link"
+              data-animsition-out-class="fade-out-left"
+              data-animsition-out-duration="1500"
+              href="/"
+              >Go Back</a
+            >
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 
+<div class=" sm-12 md-0 lg-0">
+  <div
+    class="animsition"
+    data-animsition-in-class="fade-in-left-lg"
+    data-animsition-in-duration="1500"
+    data-animsition-out-class="fade-out-left-lg"
+    data-animsition-out-duration="1500"
+  >
+    <div class="row">
+      <div class="col col--center m-5">
+        <div
+          id="locator"
+          class=" card shadow-lg p-3 mb-5 bg-white rounded w-100"
+        >
+          <div class="card-header bg-danger ">
+            <h1
+              class="futura"
+              style="text-align: center; color: white; font-size:20px;"
+            >
+              What'cha Think Fam?
+            </h1>
+          </div>
+
+          <div class="card-body  mx-auto  ">
+            <div>
+              <img
+                style="
+                        max-width:  75px;
+                        max-height: auto;
+                        "
+                class="rounded mx-auto d-block  "
+                src="{{ request.session.result.image_url }}"
+                alt=""
+              />
+              <div class="d-block">
+                <h1
+                  style="font-size:3vw; font-weight: bold;"
+                  class="futura d-block text-center "
+                >
+                  {{ request.session.result.name }}
+                </h1>
+                <span style="font-size:3vw;">
+                  {% if request.session.result.rating == 5.0 %}
+                  <img
+                    class="d-block mx-auto"
+                    src="{% static '/ya_yeat_app/images/regular_5.png' %}"
+                    alt=""
+                  />
+                  {%elif request.session.result.rating == 4.5 %}
+                  <img
+                    class="d-block mx-auto"
+                    src="{% static '/ya_yeat_app/images/regular_4_half.png' %}"
+                    alt=""
+                  />
+                  {%elif request.session.result.rating == 4.0 %}
+                  <img
+                    class="d-block mx-auto" 
+                    class="d-block mx-auto"
+                    src="{% static '/ya_yeat_app/images/regular_4.png' %}"
+                    alt=""
+                  />
+                  {%elif request.session.result.rating == 3.5 %}
+                  <img
+                    class="d-block mx-auto"
+                    src="{% static '/ya_yeat_app/images/regular_3_half.png' %}"
+                    alt=""
+                  />
+                  {%elif request.session.result.rating == 3.0 %}
+                  <img
+                    class="d-block mx-auto"
+                    src="{% static '/ya_yeat_app/images/regular_3.png' %}"
+                    alt=""
+                  />
+                  {%elif request.session.result.rating == 2.5 %}
+                  <img
+                    class="d-block mx-auto" 
+                    src="{% static '/ya_yeat_app/images/regular_2_half.png' %}"
+                    alt=""
+                  />
+                  {%elif request.session.result.rating == 2.0 %}
+                  <img
+                    class="d-block mx-auto"
+                    src="{% static '/ya_yeat_app/images/regular_2.png' %}"
+                    alt=""
+                  />
+                  {%elif request.session.result.rating == 1.5 %}
+                  <img
+                    class="d-block mx-auto"
+                    src="{% static '/ya_yeat_app/images/regular_1_half.png' %}"
+                    alt=""
+                  />
+                  {%elif request.session.result.rating == 1.0 %}
+                  <img
+                    class="d-block mx-auto"
+                    src="{% static '/ya_yeat_app/images/regular_1.png' %}"
+                    alt=""
+                  />
+                  {%elif request.session.result.rating == 0.0 %}
+                  <img
+                    class="d-block mx-auto"
+                    src="{% static '/ya_yeat_app/images/regular_0.png' %}"
+                    alt=""
+                  />
+                  {%endif%}
+                </span>
+
+                <span style="font-size:3vw;" class="futura d-block text-center">
+                  {{ request.session.result.review_count }} Reviews
+                </span>
+                <div class="d-inline-block ml-3">
+                    <span style="font-size:10px;" class="futura">{{ request.session.result.price }}</span>
+                    {% for dict_item in request.session.result.categories %}
+                    <span style="font-size: 7px;" class="futura">{{ dict_item.title }}</span>
+                    {%endfor%}
+                </div>
+       
+                {% for address in request.session.result.location.display_address %}
+                <div class="d-block text-center">
+                    <span style="font-size:3vw;" class="futura d-block">{{ address }}</span>
+                </div>
+                {%endfor%}
+                <p class="mt-2 mx-auto">
+                  <a
+                    class="btn btn-danger futura d-block mx-auto "
+                    style="padding: 5%; font-weight: bold"
+                    href="{{ request.session.result.url }}"
+                  >
+                    <span style="font-size:3vw;">More On</span>
+                    <img
+                      style="width: 3em;"
+                      class=""
+                      src="{% static 'ya_yeat_app/images/YelpLogo_Trademark/Yelp_trademark_RGB.png' %}"
+                      alt=""
+                  /></a>
+                </p>
+                <a
+                style="font-size:10px; width: 60px;"
+                class="btn btn-dark btn-lg futura "
+                href="/reset"
+                >Nah Fam</a
+              >
+              <a
+                style="font-size: 10px; width: 60px;"
+                class="btn btn-dark btn-lg futura animsition-link"
+                data-animsition-out-class="fade-out-left"
+                data-animsition-out-duration="1500"
+                href="/"
+                >Go Back</a
+              >
+              </div>
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {%endblock %}
