@@ -1,0 +1,34 @@
+.col--center {
+  justify-content: center;
+  display: flex;
+}
+
+#locator {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  /* background-image: linear-gradient(rgb(148, 148, 148), white); */
+  background-image: linear-gradient(141deg, #757f9a 10%, #d7dde8 51%);
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+ 
+@font-face {
+  font-family: futura;
+  src: url(FuturaPTLight.otf);
+}
+
+.futura {
+  font-family: futura;
+}
+
+.shadow {
+  box-shadow: white;
+}
+

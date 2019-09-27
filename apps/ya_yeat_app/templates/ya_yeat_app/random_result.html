@@ -1,0 +1,122 @@
+{% extends 'ya_yeat_app/base.html' %} {% load static %} {% block random_result%}
+
+  <div     class="animsition"
+  data-animsition-in-class="fade-in-left-lg"
+  data-animsition-in-duration="1500"
+  data-animsition-out-class="fade-out-left-lg"
+  data-animsition-out-duration="1500">
+    <div class="row">
+      <div class="col col--center m-5">
+        <div id="locator" class=" card shadow-lg p-3 mb-5 bg-white rounded ">
+          <div class="card-header bg-danger ">
+            <h1 class="futura" style="text-align: center; color: white; ">
+              What'cha Think Fam?
+            </h1>
+          </div>
+
+          <div class="card-body  mx-auto ">
+            <div class="row">
+              <div class="col-6">
+                <div class="d-inline-block mr-5 ">
+                  <h2 class="futura">{{ request.session.result.name }}</h2>
+                  {% for dict_item in request.session.result.categories %}
+                  <span class="futura">{{ dict_item.title }}</span>
+                  {%endfor%}
+                  <span class="futura">{{ request.session.result.price }}</span>
+                  <p>
+                    {% if request.session.result.rating == 5.0 %}
+                    <img
+                      src="{% static '/ya_yeat_app/images/regular_5.png' %}"
+                      alt=""
+                    />
+                    {%elif request.session.result.rating == 4.5 %}
+                    <img
+                      src="{% static '/ya_yeat_app/images/regular_4_half.png' %}"
+                      alt=""
+                    />
+                    {%elif request.session.result.rating == 4.0 %}
+                    <img
+                      src="{% static '/ya_yeat_app/images/regular_4.png' %}"
+                      alt=""
+                    />
+                    {%elif request.session.result.rating == 3.5 %}
+                    <img
+                      src="{% static '/ya_yeat_app/images/regular_3_half.png' %}"
+                      alt=""
+                    />
+                    {%elif request.session.result.rating == 3.0 %}
+                    <img
+                      src="{% static '/ya_yeat_app/images/regular_3.png' %}"
+                      alt=""
+                    />
+                    {%elif request.session.result.rating == 2.5 %}
+                    <img
+                      src="{% static '/ya_yeat_app/images/regular_2_half.png' %}"
+                      alt=""
+                    />
+                    {%elif request.session.result.rating == 2.0 %}
+                    <img
+                      src="{% static '/ya_yeat_app/images/regular_2.png' %}"
+                      alt=""
+                    />
+                    {%elif request.session.result.rating == 1.5 %}
+                    <img
+                      src="{% static '/ya_yeat_app/images/regular_1_half.png' %}"
+                      alt=""
+                    />
+                    {%elif request.session.result.rating == 1.0 %}
+                    <img
+                      src="{% static '/ya_yeat_app/images/regular_1.png' %}"
+                      alt=""
+                    />
+                    {%elif request.session.result.rating == 0.0 %}
+                    <img
+                      src="{% static '/ya_yeat_app/images/regular_0.png' %}"
+                      alt=""
+                    />
+                    {%endif%}
+                    <span class="futura"
+                      >{{ request.session.result.review_count }} Reviews</span
+                    >
+                  </p>
+                  {% for address in request.session.result.location.display_address %}
+                  <span class="futura">{{ address }}</span>
+                  {%endfor%}
+                  <p class="mt-4">
+                    <a
+                      class="btn btn-danger futura "
+                      style="padding: 5%; font-weight: bold"
+                      href="{{ request.session.result.url }}"
+                      >More On<img
+                        style="width: 5em;"
+                        class=""
+                        src="{% static 'ya_yeat_app/images/YelpLogo_Trademark/Yelp_trademark_RGB.png' %}"
+                        alt=""
+                    /></a>
+                  </p>
+                </div>
+              </div>
+              <div class="col-6">
+                <img
+                  style="
+                      max-width:  300px;
+                      max-height: 300px;
+                      "
+                  class="align-top "
+                  src="{{ request.session.result.image_url }}"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <div class="card-footer ">
+            <a class="btn btn-dark btn-lg futura " href="/reset">Nah Fam</a>
+            <a class="btn btn-dark btn-lg futura animsition-link" data-animsition-out-class="fade-out-left"
+            data-animsition-out-duration="1500" href="/">Go Back</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{%endblock %}
