@@ -26,6 +26,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/js/animsition.min.js"></script>
   </head>
   <body>
+    {% block index %} {% endblock %} {% block random_result%} {%endblock %}
     <script>
       $(document).ready(function() {
         $(".animsition").animsition({
@@ -54,7 +55,5 @@
         });
       });
     </script>
-
-    {% block index %} {% endblock %} {% block random_result%} {%endblock %}
   </body>
 </html>

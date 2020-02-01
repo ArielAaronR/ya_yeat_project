@@ -48,7 +48,7 @@ def result(request):
 def reset(request):
     url = 'https://api.yelp.com/v3/businesses/search'
     params = {'term': 'food',
-              'location': request.session['location'], 'is_closed': False, 'limit': 50, 'radius': 8000}
+              'location': request.session['location'], 'is_closed': False, 'limit': 50, 'radius': 8000, }
     req = requests.get(url, params=params, headers=headers)
     parsed = json.loads(req.text)
     if not req:
@@ -66,6 +66,6 @@ def reset(request):
     print('Rating', result['rating'])
     print('Link', result['url'])
     print('image_url', result['image_url'])
+
     request.session['result'] = result
     return redirect('/result')
-
