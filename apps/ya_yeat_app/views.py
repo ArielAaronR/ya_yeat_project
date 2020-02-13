@@ -4,8 +4,7 @@ import json
 import random
 from django.contrib import messages
 from django.contrib.messages import get_messages
-api_key = 'sRguZutdBDXqX7qS6_kPp4xgVacIyBzzmhHAeogaN2pSFgSzBsO8PtU3GCCsXzWTVqFqBvv7Hso7C20g2o_6o_6hZyyEnHq1kb6PoF5EE6w_qCBM-39I1rnA0V6KXXYx'
-
+api_key = ''
 
 headers = {'Authorization': 'Bearer %s' % api_key}
 # Create your views here.
