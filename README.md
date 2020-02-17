@@ -13,3 +13,6 @@ Live Demo: http://3.134.110.178/
 <p>There are some locations that not available in Yelps Database to prevent the app from breaking I used if statments to show the errors in a user's search</p>
 
 ![](https://media.giphy.com/media/WR3sOzafNUVZcvAvRJ/giphy.gif)
+
+<p> Mobile Version</p>
+![](https://media.giphy.com/media/UtVThOcxh6blJC4gpD/giphy.gif)
