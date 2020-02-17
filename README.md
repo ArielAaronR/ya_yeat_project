@@ -15,4 +15,5 @@ Live Demo: http://3.134.110.178/
 ![](https://media.giphy.com/media/WR3sOzafNUVZcvAvRJ/giphy.gif)
 
 <p> Mobile Version</p>
-![](https://media.giphy.com/media/UtVThOcxh6blJC4gpD/giphy.gif)
+
+![](https://media.giphy.com/media/UtVThOcxh6blJC4gpD/giphy.gif )
